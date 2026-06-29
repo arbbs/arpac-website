@@ -1,65 +1,142 @@
-import Image from "next/image";
+﻿import Link from "next/link";
 
-export default function Home() {
+const services = [
+  ["Personal Tax", "We help prepare personal tax information and support clients with records needed for Self Assessment."],
+  ["Corporation Tax", "We support limited companies with accounts information, bookkeeping records and corporation tax preparation."],
+  ["Payroll", "We prepare payroll, payslips and employer records, including submissions required by HMRC."],
+  ["Company Formation", "We help clients understand the setup requirements for forming and operating a UK limited company."],
+  ["VAT Returns", "We prepare VAT records and support VAT return preparation for businesses registered for VAT."],
+  ["Bookkeeping", "We maintain bookkeeping records, prepare trial balances and support monthly management information."],
+];
+
+export default function HomePage() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <main>
+      <header className="siteHeader">
+        <Link href="/" className="logo">AR</Link>
+        <nav className="nav">
+          <a href="#home">Home</a>
+          <a href="#why">Why Choose Us</a>
+          <a href="#services">Our Services</a>
+          <a href="#contact">Contact Us</a>
+          <a href="#contact">Book Online</a>
+        </nav>
+      </header>
+
+      <section id="home" className="hero">
+        <div className="heroImage" />
+        <div className="heroCard">
+          <h1>AR Payroll & Consultancy Ltd</h1>
+          <div className="line" />
+          <p>
+            AR Payroll & Consultancy Ltd, formerly known as AR Book Keeping
+            Service, provides bookkeeping, payroll, VAT and accountancy support
+            for individuals and businesses.
+          </p>
+          <p>
+            We also operate AR Bookkeeping, our internal software used to help
+            manage client records, VAT preparation and HMRC Making Tax Digital
+            workflows.
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      <section id="why" className="whySection">
+        <h2>Why Choose Us</h2>
+        <p>
+          We focus on clear records, practical support and reliable compliance
+          workflows for small businesses.
+        </p>
+
+        <div className="whyGrid">
+          <div>
+            <strong>Practical support</strong>
+            <span>Bookkeeping, payroll, VAT and accounts support in one place.</span>
+          </div>
+          <div>
+            <strong>HMRC-focused systems</strong>
+            <span>Software workflows designed around VAT MTD and record keeping.</span>
+          </div>
+          <div>
+            <strong>Client-first approach</strong>
+            <span>Clear communication and secure handling of business data.</span>
+          </div>
         </div>
-      </main>
-    </div>
+      </section>
+
+      <section id="services" className="servicesSection">
+        <div className="sectionIntro">
+          <h2>Our Services</h2>
+          <p>Accounting, bookkeeping, payroll and VAT support for UK businesses.</p>
+        </div>
+
+        <div className="serviceGrid">
+          {services.map(([title, text]) => (
+            <article className="serviceCard" key={title}>
+              <h3>{title}</h3>
+              <p>{text}</p>
+              <a href="#contact">+ Learn More</a>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="testimonial">
+        <h2>Testimonials</h2>
+        <blockquote>
+          “AR Payroll & Consultancy Ltd has been doing my books for the past 5
+          years. They are very efficient, professional and reliable.”
+        </blockquote>
+        <p>
+          <strong>Henry Bell</strong>
+          <br />
+          CEO of Chardos Building Renovations Ltd
+        </p>
+      </section>
+
+      <section className="cta">
+        <h2>Ready to find out more?</h2>
+        <p>
+          Contact us to discuss bookkeeping, payroll, VAT returns or AR
+          Bookkeeping software support.
+        </p>
+        <a href="#contact" className="button">Get free consultation</a>
+      </section>
+
+      <section id="contact" className="contactSection">
+        <h2>Contact Us</h2>
+
+        <div className="contactGrid">
+          <div>
+            <h3>AR Payroll & Consultancy Ltd</h3>
+            <p>272 Brixton Hill</p>
+            <p>London</p>
+            <p>SW2 1HP</p>
+          </div>
+
+          <div>
+            <h3>Contact details</h3>
+            <p>Tel: <a href="tel:02037437144">02037437144</a></p>
+            <p>Email: <a href="mailto:info@ar-bookkeeping.com">info@ar-bookkeeping.com</a></p>
+          </div>
+
+          <div>
+            <h3>Legal</h3>
+            <p><Link href="/privacy-policy">Privacy Policy</Link></p>
+            <p><Link href="/terms">Terms and Conditions</Link></p>
+          </div>
+        </div>
+      </section>
+
+      <footer className="footer">
+        <p>© {new Date().getFullYear()} AR Payroll & Consultancy Ltd. All rights reserved.</p>
+        <p>
+          <Link href="/privacy-policy">Privacy Policy</Link> ·{" "}
+          <Link href="/terms">Terms</Link>
+        </p>
+      </footer>
+    </main>
   );
 }
+
+
