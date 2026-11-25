@@ -3,11 +3,13 @@ import Link from "next/link";
 import { Breadcrumbs, Shell } from "../components/Shell";
 import { JsonLd, breadcrumbJsonLd } from "../../lib/jsonld";
 import { SERVICES } from "../../lib/services";
+import { OG_BASE } from "../../lib/site";
 
 export const metadata: Metadata = {
   title: "Accountancy services in London",
   description: "Bookkeeping, payroll, VAT returns, Self Assessment, Making Tax Digital, corporation tax and company formation for small businesses in London.",
   alternates: { canonical: "/services" },
+  openGraph: { ...OG_BASE, title: "Accountancy services in London", url: "/services" },
 };
 
 export default function ServicesPage() {

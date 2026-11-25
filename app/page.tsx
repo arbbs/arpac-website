@@ -1,4 +1,11 @@
-﻿import Link from "next/link";
+﻿import type { Metadata } from "next";
+import Link from "next/link";
+import { OG_BASE } from "../lib/site";
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+  openGraph: { ...OG_BASE, url: "/" },
+};
 
 const services = [
   ["Personal Tax", "self-assessment", "We help prepare personal tax information and support clients with records needed for Self Assessment."],

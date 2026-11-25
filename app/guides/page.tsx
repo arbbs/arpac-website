@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Breadcrumbs, Shell } from "../components/Shell";
 import { JsonLd, breadcrumbJsonLd } from "../../lib/jsonld";
 import { listGuides } from "../../lib/guides";
+import { OG_BASE } from "../../lib/site";
 
 export const revalidate = 600;
 
@@ -10,6 +11,7 @@ export const metadata: Metadata = {
   title: "UK tax guides for sole traders and small businesses",
   description: "Plain-English guides to Self Assessment, Making Tax Digital, VAT and payroll, checked against GOV.UK.",
   alternates: { canonical: "/guides" },
+  openGraph: { ...OG_BASE, title: "UK tax guides for sole traders and small businesses", url: "/guides" },
 };
 
 export default async function GuidesPage() {

@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import { Breadcrumbs, Faqs, Shell } from "../../components/Shell";
 import { JsonLd, breadcrumbJsonLd, faqJsonLd } from "../../../lib/jsonld";
 import { SERVICES, getService } from "../../../lib/services";
-import { SITE_URL } from "../../../lib/site";
+import { OG_BASE, SITE_URL } from "../../../lib/site";
 
 export const dynamicParams = false;
 
@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     title: s.metaTitle,
     description: s.description,
     alternates: { canonical: `/services/${s.slug}` },
-    openGraph: { title: s.metaTitle, description: s.description, url: `/services/${s.slug}` },
+    openGraph: { ...OG_BASE, title: s.metaTitle, description: s.description, url: `/services/${s.slug}` },
   };
 }
 

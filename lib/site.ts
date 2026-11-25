@@ -1,6 +1,10 @@
 // Business details used for metadata, structured data and pages.
 export const SITE_URL = "https://www.ar-bookkeeping.com";
 
+// Shared Open Graph fields. Next.js replaces (does not merge) a parent's openGraph,
+// so every page that sets openGraph spreads this in.
+export const OG_BASE = { type: "website" as const, locale: "en_GB", siteName: "AR Payroll & Consultancy Ltd" };
+
 export const BUSINESS = {
   name: "AR Payroll & Consultancy Ltd",
   alternateName: "AR Book Keeping Service",

@@ -1,7 +1,7 @@
 ﻿import type { Metadata } from "next";
 import "./globals.css";
 import { JsonLd, businessJsonLd } from "../lib/jsonld";
-import { SITE_URL } from "../lib/site";
+import { OG_BASE, SITE_URL } from "../lib/site";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -11,13 +11,7 @@ export const metadata: Metadata = {
   },
   description:
     "London accountancy practice for sole traders, freelancers and small limited companies: bookkeeping, payroll, VAT, Self Assessment and Making Tax Digital support.",
-  alternates: { canonical: "/" },
-  openGraph: {
-    type: "website",
-    locale: "en_GB",
-    siteName: "AR Payroll & Consultancy Ltd",
-    url: SITE_URL,
-  },
+  openGraph: OG_BASE,
 };
 
 export default function RootLayout({

@@ -4,7 +4,7 @@ import { Breadcrumbs, Faqs, Shell } from "../../components/Shell";
 import { JsonLd, breadcrumbJsonLd, faqJsonLd } from "../../../lib/jsonld";
 import { getGuide, listGuides } from "../../../lib/guides";
 import { Markdown } from "../../../lib/markdown";
-import { BUSINESS, SITE_URL } from "../../../lib/site";
+import { BUSINESS, OG_BASE, SITE_URL } from "../../../lib/site";
 
 export const revalidate = 600;
 
@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     title: g.title,
     description: g.description,
     alternates: { canonical: `/guides/${g.slug}` },
-    openGraph: { type: "article", title: g.title, description: g.description, url: `/guides/${g.slug}`, publishedTime: g.published_at, modifiedTime: g.updated_at },
+    openGraph: { ...OG_BASE, type: "article", title: g.title, description: g.description, url: `/guides/${g.slug}`, publishedTime: g.published_at, modifiedTime: g.updated_at },
   };
 }
 
