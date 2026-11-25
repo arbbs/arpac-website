@@ -1,10 +1,17 @@
 ﻿import type { Metadata } from "next";
 import "./globals.css";
+import { JsonLd, businessJsonLd } from "../lib/jsonld";
+import { OG_BASE, SITE_URL } from "../lib/site";
 
 export const metadata: Metadata = {
-  title: "AR Payroll & Consultancy Ltd | AR Bookkeeping",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: "AR Payroll & Consultancy Ltd | Bookkeeping, Payroll and Tax in London",
+    template: "%s | AR Payroll & Consultancy Ltd",
+  },
   description:
-    "Accounting, bookkeeping, payroll, VAT and AR Bookkeeping software support for HMRC VAT MTD.",
+    "London accountancy practice for sole traders, freelancers and small limited companies: bookkeeping, payroll, VAT, Self Assessment and Making Tax Digital support.",
+  openGraph: OG_BASE,
 };
 
 export default function RootLayout({
@@ -13,9 +20,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body>{children}</body>
+    <html lang="en-GB">
+      <body>
+        <JsonLd data={businessJsonLd} />
+        {children}
+      </body>
     </html>
   );
 }
-

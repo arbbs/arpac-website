@@ -1,4 +1,13 @@
-﻿import Link from "next/link";
+﻿import type { Metadata } from "next";
+import Link from "next/link";
+import { OG_BASE } from "../../lib/site";
+
+export const metadata: Metadata = {
+  title: "Privacy Policy",
+  description: "How AR Payroll & Consultancy Ltd collects, uses and protects personal information.",
+  alternates: { canonical: "/privacy-policy" },
+  openGraph: { ...OG_BASE, title: "Privacy Policy", description: "How AR Payroll & Consultancy Ltd collects, uses and protects personal information.", url: "/privacy-policy" },
+};
 
 export default function PrivacyPolicyPage() {
   return (

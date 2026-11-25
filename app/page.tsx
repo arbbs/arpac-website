@@ -1,12 +1,19 @@
-﻿import Link from "next/link";
+﻿import type { Metadata } from "next";
+import Link from "next/link";
+import { OG_BASE } from "../lib/site";
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+  openGraph: { ...OG_BASE, url: "/" },
+};
 
 const services = [
-  ["Personal Tax", "We help prepare personal tax information and support clients with records needed for Self Assessment."],
-  ["Corporation Tax", "We support limited companies with accounts information, bookkeeping records and corporation tax preparation."],
-  ["Payroll", "We prepare payroll, payslips and employer records, including submissions required by HMRC."],
-  ["Company Formation", "We help clients understand the setup requirements for forming and operating a UK limited company."],
-  ["VAT Returns", "We prepare VAT records and support VAT return preparation for businesses registered for VAT."],
-  ["Bookkeeping", "We maintain bookkeeping records, prepare trial balances and support monthly management information."],
+  ["Personal Tax", "self-assessment", "We help prepare personal tax information and support clients with records needed for Self Assessment."],
+  ["Corporation Tax", "corporation-tax", "We support limited companies with accounts information, bookkeeping records and corporation tax preparation."],
+  ["Payroll", "payroll", "We prepare payroll, payslips and employer records, including submissions required by HMRC."],
+  ["Company Formation", "company-formation", "We help clients understand the setup requirements for forming and operating a UK limited company."],
+  ["VAT Returns", "vat-returns", "We prepare VAT records and support VAT return preparation for businesses registered for VAT."],
+  ["Bookkeeping", "bookkeeping", "We maintain bookkeeping records, prepare trial balances and support monthly management information."],
 ];
 
 export default function HomePage() {
@@ -17,7 +24,8 @@ export default function HomePage() {
         <nav className="nav">
           <a href="#home">Home</a>
           <a href="#why">Why Choose Us</a>
-          <a href="#services">Our Services</a>
+          <Link href="/services">Our Services</Link>
+          <Link href="/guides">Guides</Link>
           <a href="#contact">Contact Us</a>
           <a href="#contact">Book Online</a>
         </nav>
@@ -71,11 +79,11 @@ export default function HomePage() {
         </div>
 
         <div className="serviceGrid">
-          {services.map(([title, text]) => (
+          {services.map(([title, slug, text]) => (
             <article className="serviceCard" key={title}>
               <h3>{title}</h3>
               <p>{text}</p>
-              <a href="#contact">+ Learn More</a>
+              <Link href={`/services/${slug}`}>+ Learn More</Link>
             </article>
           ))}
         </div>

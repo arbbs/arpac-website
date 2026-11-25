@@ -1,4 +1,13 @@
-﻿import Link from "next/link";
+﻿import type { Metadata } from "next";
+import Link from "next/link";
+import { OG_BASE } from "../../lib/site";
+
+export const metadata: Metadata = {
+  title: "Terms and Conditions",
+  description: "Terms and conditions for using the AR Payroll & Consultancy Ltd website and services.",
+  alternates: { canonical: "/terms" },
+  openGraph: { ...OG_BASE, title: "Terms and Conditions", description: "Terms and conditions for using the AR Payroll & Consultancy Ltd website and services.", url: "/terms" },
+};
 
 export default function TermsPage() {
   return (
