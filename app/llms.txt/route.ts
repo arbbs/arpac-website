@@ -18,6 +18,9 @@ export async function GET() {
     "## Guides",
     ...(guides.length ? guides.map((g) => `- [${g.title}](${SITE_URL}/guides/${g.slug}): ${g.description}`) : ["- New guides are on their way."]),
     "",
+    "## Get in touch",
+    `- [Free 1-minute check](${SITE_URL}/check): a short form; the practice calls back to explain what you need to file and when.`,
+    "",
     "## Notes",
     "- Guides are general information, not advice. Each cites the GOV.UK pages it is based on.",
   ];

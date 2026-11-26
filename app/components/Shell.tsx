@@ -2,7 +2,7 @@ import Link from "next/link";
 import { BUSINESS } from "../../lib/site";
 
 // Header, footer and call to action shared by service and guide pages.
-export function Shell({ children }: { children: React.ReactNode }) {
+export function Shell({ children, hideCta = false }: { children: React.ReactNode; hideCta?: boolean }) {
   return (
     <>
       <header className="siteHeader">
@@ -11,15 +11,18 @@ export function Shell({ children }: { children: React.ReactNode }) {
           <Link href="/">Home</Link>
           <Link href="/services">Services</Link>
           <Link href="/guides">Guides</Link>
+          <Link href="/check">Free check</Link>
           <Link href="/#contact">Contact Us</Link>
         </nav>
       </header>
       <main className="legalPage contentPage">{children}</main>
-      <section className="cta">
-        <h2>Want to talk it through?</h2>
-        <p>Book a free consultation with our London team.</p>
-        <Link href="/#contact" className="button">Get free consultation</Link>
-      </section>
+      {!hideCta && (
+        <section className="cta">
+          <h2>Want to talk it through?</h2>
+          <p>Take our free 1-minute check and we will call you back.</p>
+          <Link href="/check" className="button">Take the free check</Link>
+        </section>
+      )}
       <footer className="footer">
         <p>
           {BUSINESS.name} · {BUSINESS.street}, {BUSINESS.locality} {BUSINESS.postalCode} ·{" "}
