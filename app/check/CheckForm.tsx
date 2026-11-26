@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { SUPABASE_PUBLISHABLE_KEY, SUPABASE_URL } from "../../lib/site";
 
 const TYPES = ["Sole trader or freelancer", "Landlord", "Employed with side income", "Limited company", "Not sure yet"];
@@ -19,7 +19,10 @@ type State = { kind: "idle" } | { kind: "sending" } | { kind: "done" } | { kind:
 
 export function CheckForm() {
   const [state, setState] = useState<State>({ kind: "idle" });
-  const opened = useRef(Date.now());
+  const opened = useRef(0);
+  useEffect(() => {
+    opened.current = Date.now();
+  }, []);
 
   async function submit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
