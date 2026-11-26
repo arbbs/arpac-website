@@ -427,3 +427,8 @@ a {
 .formError { background: #fbeaea; color: #8f1d1d; border-radius: 8px; padding: 10px 12px; margin: 0; }
 .formDone { border: 1px solid #cfe5d8; background: #eef7f1; border-radius: 10px; padding: 20px 22px; margin: 24px 0; }
 .formDone h2 { margin-top: 0; color: var(--blue); }
+
+/* Other services (CIS) below the main grid */
+.otherServices { max-width: 1100px; margin: 48px auto 0; }
+.otherServices > h3 { color: var(--blue); font-size: 1.6rem; font-weight: 400; margin: 0 0 18px; }
+.serviceCard.wide { max-width: 100%; min-height: auto; }

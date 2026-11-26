@@ -87,6 +87,15 @@ export default function HomePage() {
             </article>
           ))}
         </div>
+
+        <div className="otherServices">
+          <h3>Other services</h3>
+          <article className="serviceCard wide">
+            <h3>CIS Returns</h3>
+            <p>We prepare and submit monthly CIS returns for contractors, check subcontractors with HMRC and send their payment and deduction statements.</p>
+            <Link href="/services/cis">+ Learn More</Link>
+          </article>
+        </div>
       </section>
 
       <section className="testimonial">

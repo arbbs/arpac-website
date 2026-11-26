@@ -23,7 +23,7 @@ export const businessJsonLd = {
     addressCountry: BUSINESS.country,
   },
   areaServed: [{ "@type": "City", name: "London" }, { "@type": "Country", name: "United Kingdom" }],
-  knowsAbout: ["Self Assessment", "Making Tax Digital", "Bookkeeping", "Payroll", "VAT returns", "Corporation tax", "Company formation"],
+  knowsAbout: ["Self Assessment", "Making Tax Digital", "Bookkeeping", "Payroll", "VAT returns", "Corporation tax", "Company formation", "Construction Industry Scheme (CIS) returns"],
 };
 
 export function faqJsonLd(faqs: { q: string; a: string }[]) {

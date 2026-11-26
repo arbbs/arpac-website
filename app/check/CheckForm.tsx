@@ -10,6 +10,7 @@ const NEEDS = [
   "Making Tax Digital",
   "Bookkeeping",
   "Payroll",
+  "CIS returns",
   "VAT returns",
   "Company accounts and corporation tax",
   "Setting up a limited company",

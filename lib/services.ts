@@ -84,6 +84,24 @@ export const SERVICES: Service[] = [
     ],
   },
   {
+    slug: "cis",
+    title: "CIS Returns",
+    metaTitle: "CIS returns for contractors in London",
+    description: "Monthly Construction Industry Scheme (CIS) returns for contractors: checking subcontractors with HMRC, working out deductions and submitting each return.",
+    intro: "We prepare and submit monthly CIS returns for contractors in the construction industry, so the right deductions are made and HMRC receives each return on time.",
+    whatWeDo: [
+      "Check new subcontractors with HMRC",
+      "Work out the CIS deductions from subcontractor payments",
+      "Prepare and submit your monthly CIS return to HMRC",
+      "Send payment and deduction statements to your subcontractors",
+    ],
+    whoFor: ["Builders and construction contractors", "Trades businesses that pay subcontractors", "Subcontractors who have CIS taken from their pay"],
+    faqs: [
+      { q: "Can you take over CIS returns that have fallen behind?", a: "Yes. We start by finding out which months are missing and bring them up to date." },
+      { q: "Do you help subcontractors as well?", a: "Yes. We make sure the CIS taken from your pay is included in your tax return or company accounts." },
+    ],
+  },
+  {
     slug: "vat-returns",
     title: "VAT Returns",
     metaTitle: "VAT return preparation in London",
