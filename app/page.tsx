@@ -27,7 +27,7 @@ export default function HomePage() {
           <Link href="/services">Our Services</Link>
           <Link href="/guides">Guides</Link>
           <a href="#contact">Contact Us</a>
-          <a href="#contact">Book Online</a>
+          <Link href="/check">Free check</Link>
         </nav>
       </header>
 
@@ -108,7 +108,7 @@ export default function HomePage() {
           Contact us to discuss bookkeeping, payroll, VAT returns or AR
           Bookkeeping software support.
         </p>
-        <a href="#contact" className="button">Get free consultation</a>
+        <Link href="/check" className="button">Take the free 1-minute check</Link>
       </section>
 
       <section id="contact" className="contactSection">

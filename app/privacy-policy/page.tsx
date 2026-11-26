@@ -55,6 +55,7 @@ export default function PrivacyPolicyPage() {
         <li>VAT return information and Making Tax Digital records.</li>
         <li>HMRC authorisation information and OAuth access tokens where required.</li>
         <li>Correspondence, support messages and service records.</li>
+        <li>Enquiries sent through our website check form: your name, email address, phone number, the type of help you are looking for and anything you choose to tell us. We use these only to reply to your enquiry, keep them securely, and delete enquiries that do not lead to working together within 12 months. You can ask us to delete yours at any time.</li>
         <li>Technical information needed to operate, secure and audit our software.</li>
       </ul>
 
